@@ -1,8 +1,8 @@
 public class Hogwarts {
 
-    protected String name;
-    protected int powerOfMagic; //сила колдовства
-    protected int apparate; //трансгрессировать
+    private String name;
+    private int powerOfMagic; //сила колдовства
+    private int apparate; //трансгрессировать
 
     public Hogwarts(String name, int powerOfMagic, int apparate) {
         this.name = name;

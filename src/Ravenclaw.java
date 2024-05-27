@@ -16,7 +16,7 @@ public class Ravenclaw extends Hogwarts {
 
     @Override
     public String toString() {
-        return getName() + " (" + faculty + "): сила колдовства-" + powerOfMagic + ", телепорт-" + apparate +
+        return getName() + " (" + faculty + "): сила колдовства-" + getPowerOfMagic() + ", телепорт-" + getApparate() +
                 ", ум-" + mind + ", мудрость-" + wisdom + ", остроумный-" + witty + ", творческий-" + creative;
     }
 

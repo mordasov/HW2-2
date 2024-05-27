@@ -19,7 +19,7 @@ public class Slytherin extends Hogwarts {
 
     @Override
     public String toString() {
-        return getName() + " (" + faculty + "): сила колдовства-" + powerOfMagic + ", телепорт-" + apparate +
+        return getName() + " (" + faculty + "): сила колдовства-" + getPowerOfMagic() + ", телепорт-" + getApparate() +
                 ", хитрость-" + cunning + ", решительность-" + determination + ", ambitiousness-" + ambitiousness +
                 ", находчивость-" + inventiveness + ", жажда власти-" + lustForPower;
     }
