@@ -11,18 +11,17 @@ public class Hogwarts {
     }
 
     public static void printMostPowerfullStudent(Hogwarts studentA, Hogwarts studentB) {
-        int sumA = studentA.powerOfMagic + studentB.getApparate();
-        int sumB = studentB.powerOfMagic + studentB.getApparate();
+        int sumA = studentA.powerOfMagic + studentA.apparate;
+        int sumB = studentB.powerOfMagic + studentB.apparate;
 
         if (sumA == sumB) {
-            System.out.println(studentA.getName() + " и " + studentB.getName() + " имеют одинаковую мощность магии");
+            System.out.println(studentA.name + " и " + studentB.name + " имеют одинаковую мощность магии");
         } else if (sumA > sumB) {
-            System.out.println(studentA.getName() + " обладает большей мощностью магии, чем " + studentB.getName() + ".");
+            System.out.println(studentA.name + " обладает большей мощностью магии, чем " + studentB.name + ".");
         } else {
-            System.out.println(studentB.getName() + " обладает большей мощностью магии, чем " + studentA.getName() + ".");
+            System.out.println(studentB.name + " обладает большей мощностью магии, чем " + studentA.name + ".");
         }
     }
-
 
     public String getName() {
         return name;
@@ -31,14 +30,6 @@ public class Hogwarts {
     @Override
     public String toString() {
         return getName() + ": сила колдовства-" + powerOfMagic + ", телепорт-" + apparate;
-    }
-
-    public int getPowerOfMagic() {
-        return powerOfMagic;
-    }
-
-    public int getApparate() {
-        return apparate;
     }
 
 }

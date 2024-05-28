@@ -1,6 +1,6 @@
 public class Slytherin extends Hogwarts {
 
-    private static String faculty = "Слизерин";
+    private static String FACULTY = "Слизерин";
     private int cunning; //хитрость
     private int determination; //решительность
     private int ambitiousness; //амбициозность
@@ -19,19 +19,16 @@ public class Slytherin extends Hogwarts {
 
     @Override
     public String toString() {
-        return getName() + " (" + faculty + "): сила колдовства-" + getPowerOfMagic() + ", телепорт-" + getApparate() +
-                ", хитрость-" + cunning + ", решительность-" + determination + ", ambitiousness-" + ambitiousness +
-                ", находчивость-" + inventiveness + ", жажда власти-" + lustForPower;
-    }
-
-    public static String getFaculty() {
-        return faculty;
+        return /*getName() + ": сила колдовства-" + getPowerOfMagic() + ", телепорт-" + getApparate() +*/
+                super.toString() +
+                        ", хитрость-" + cunning + ", решительность-" + determination + ", ambitiousness-" + ambitiousness +
+                        ", находчивость-" + inventiveness + ", жажда власти-" + lustForPower +
+                        " (" + FACULTY + ")";
     }
 
     public static int sumMarks(Slytherin student) {
-        return student.getPowerOfMagic() + student.getApparate() + student.getCunning() +
-                student.getDetermination() + student.getAmbitiousness() + student.getInventiveness()
-                + student.getLustForPower();
+        return student.cunning + student.determination + student.ambitiousness +
+                student.inventiveness + student.lustForPower;
     }
 
     public static void printBestStudent(Slytherin studentA, Slytherin studentB) {
@@ -40,32 +37,12 @@ public class Slytherin extends Hogwarts {
         if (sumA == sumB) {
             System.out.println(studentA.getName() + " и " + studentB.getName() + " имеют одинаковое количество баллов");
         } else if (sumA > sumB) {
-            System.out.println(studentA.getName() + " лучше на факультете " + faculty +
+            System.out.println(studentA.getName() + " лучше на факультете " + FACULTY +
                     ", чем " + studentB.getName() + ".");
         } else {
-            System.out.println(studentB.getName() + " лучше на факультете " + faculty +
+            System.out.println(studentB.getName() + " лучше на факультете " + FACULTY +
                     ", чем " + studentA.getName() + ".");
         }
-    }
-
-    public int getCunning() {
-        return cunning;
-    }
-
-    public int getDetermination() {
-        return determination;
-    }
-
-    public int getAmbitiousness() {
-        return ambitiousness;
-    }
-
-    public int getInventiveness() {
-        return inventiveness;
-    }
-
-    public int getLustForPower() {
-        return lustForPower;
     }
 
 }

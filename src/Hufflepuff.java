@@ -1,6 +1,6 @@
 public class Hufflepuff extends Hogwarts {
 
-    private static String faculty = "Пуффендуй";
+    private static String FACULTY = "Пуффендуй";
     private int diligence; //трудолюбие
     private int loyalty; //верность
     private int honesty; //честность
@@ -14,17 +14,14 @@ public class Hufflepuff extends Hogwarts {
 
     @Override
     public String toString() {
-        return getName() + " (" + faculty + "): сила колдовства-" + getPowerOfMagic() + ", телепорт-" + getApparate() +
-                ", трудолюбие-" + diligence + ", верность-" + loyalty + ", честность-" + honesty;
-    }
-
-    public static String getFaculty() {
-        return faculty;
+        return /*getName() + ": сила колдовства-" + getPowerOfMagic() + ", телепорт-" + getApparate() +*/
+                super.toString() +
+                        ", трудолюбие-" + diligence + ", верность-" + loyalty + ", честность-" + honesty + " ("
+                        + FACULTY + ")";
     }
 
     public static int sumMarks(Hufflepuff student) {
-        return student.getPowerOfMagic() + student.getApparate() + student.getDiligence() +
-                student.getLoyalty() + student.getHonesty();
+        return student.diligence + student.loyalty + student.honesty;
     }
 
     public static void printBestStudent(Hufflepuff studentA, Hufflepuff studentB) {
@@ -33,24 +30,12 @@ public class Hufflepuff extends Hogwarts {
         if (sumA == sumB) {
             System.out.println(studentA.getName() + " и " + studentB.getName() + " имеют одинаковое количество баллов");
         } else if (sumA > sumB) {
-            System.out.println(studentA.getName() + " лучше на факультете " + faculty +
+            System.out.println(studentA.getName() + " лучше на факультете " + FACULTY +
                     ", чем " + studentB.getName() + ".");
         } else {
-            System.out.println(studentB.getName() + " лучше на факультете " + faculty +
+            System.out.println(studentB.getName() + " лучше на факультете " + FACULTY +
                     ", чем " + studentA.getName() + ".");
         }
-    }
-
-    public int getDiligence() {
-        return diligence;
-    }
-
-    public int getLoyalty() {
-        return loyalty;
-    }
-
-    public int getHonesty() {
-        return honesty;
     }
 
 }

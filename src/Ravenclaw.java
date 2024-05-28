@@ -1,6 +1,6 @@
 public class Ravenclaw extends Hogwarts {
 
-    private static String faculty = "Когтевран";
+    private static String FACULTY = "Когтевран";
     private int mind; // ум
     private int wisdom; //мудрость
     private int witty; //остроумный
@@ -16,17 +16,14 @@ public class Ravenclaw extends Hogwarts {
 
     @Override
     public String toString() {
-        return getName() + " (" + faculty + "): сила колдовства-" + getPowerOfMagic() + ", телепорт-" + getApparate() +
-                ", ум-" + mind + ", мудрость-" + wisdom + ", остроумный-" + witty + ", творческий-" + creative;
-    }
-
-    public static String getFaculty() {
-        return faculty;
+        return /*getName() + ": сила колдовства-" + getPowerOfMagic() + ", телепорт-" + getApparate() +*/
+                super.toString() +
+                        ", ум-" + mind + ", мудрость-" + wisdom + ", остроумный-" + witty + ", творческий-" + creative +
+                        " (" + FACULTY + ")";
     }
 
     public static int sumMarks(Ravenclaw student) {
-        return student.getPowerOfMagic() + student.getApparate() + student.getMind() +
-                student.getWisdom() + student.getWitty() + student.getCreative();
+        return student.mind + student.wisdom + student.witty + student.creative;
     }
 
     public static void printBestStudent(Ravenclaw studentA, Ravenclaw studentB) {
@@ -35,28 +32,12 @@ public class Ravenclaw extends Hogwarts {
         if (sumA == sumB) {
             System.out.println(studentA.getName() + " и " + studentB.getName() + " имеют одинаковое количество баллов");
         } else if (sumA > sumB) {
-            System.out.println(studentA.getName() + " лучше на факультете " + faculty +
+            System.out.println(studentA.getName() + " лучше на факультете " + FACULTY +
                     ", чем " + studentB.getName() + ".");
         } else {
-            System.out.println(studentB.getName() + " лучше на факультете " + faculty +
+            System.out.println(studentB.getName() + " лучше на факультете " + FACULTY +
                     ", чем " + studentA.getName() + ".");
         }
-    }
-
-    public int getMind() {
-        return mind;
-    }
-
-    public int getWisdom() {
-        return wisdom;
-    }
-
-    public int getWitty() {
-        return witty;
-    }
-
-    public int getCreative() {
-        return creative;
     }
 
 }

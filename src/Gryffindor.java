@@ -1,6 +1,6 @@
 public class Gryffindor extends Hogwarts {
 
-    private static String faculty = "Гриффиндор";
+    private static String FACULTY = "Гриффиндор";
     private int nobility; //благородство
     private int honor; //честь
     private int bravery; //храбрость
@@ -13,8 +13,7 @@ public class Gryffindor extends Hogwarts {
     }
 
     public static int sumMarks(Gryffindor student) {
-        return student.getPowerOfMagic() + student.getApparate() + student.getNobility() +
-                student.getHonor() + student.getBravery();
+        return student.nobility + student.honor + student.bravery;
     }
 
     public static void printBestStudent(Gryffindor studentA, Gryffindor studentB) {
@@ -23,34 +22,20 @@ public class Gryffindor extends Hogwarts {
         if (sumA == sumB) {
             System.out.println(studentA.getName() + " и " + studentB.getName() + " имеют одинаковое количество баллов");
         } else if (sumA > sumB) {
-            System.out.println(studentA.getName() + " лучше на факультете " + faculty +
+            System.out.println(studentA.getName() + " лучше на факультете " + FACULTY +
                     ", чем " + studentB.getName() + ".");
         } else {
-            System.out.println(studentB.getName() + " лучше на факультете " + faculty +
+            System.out.println(studentB.getName() + " лучше на факультете " + FACULTY +
                     ", чем " + studentA.getName() + ".");
         }
     }
 
     @Override
     public String toString() {
-        return getName() + " (" + faculty + "): сила колдовства-" + getPowerOfMagic() + ", телепорт-" + getApparate() +
-                ", благородство-" + nobility + ", честь-" + honor + ", храбрость-" + bravery;
-    }
-
-    public static String getFaculty() {
-        return faculty;
-    }
-
-    public int getNobility() {
-        return nobility;
-    }
-
-    public int getHonor() {
-        return honor;
-    }
-
-    public int getBravery() {
-        return bravery;
+        return /*getName() + ": сила колдовства-" + getPowerOfMagic() + ", телепорт-" + getApparate() +*/
+                super.toString() +
+                        ", благородство-" + nobility + ", честь-" + honor + ", храбрость-" + bravery + " ("
+                        + FACULTY + ")";
     }
 
 }
